@@ -20,11 +20,20 @@ function changeCommitHistory {
     case $isCorrect in
         "y" | "yes")
             git reflog expire --expire=now --all && git gc --prune=now --aggressive
-            echo "write out the message :"
+            echo "write out the to commit :"
             read message
             git add .
             git commit -m "$message"
-            git push -f
+            echo "do you want to push the local git"
+            read pushChange
+            case $pushChange in
+                "y" | "yes") 
+                    git push -f
+                ;;
+                "n"|"no") 
+                    exit
+                ;;
+            esac
         ;;
         "n"|"no") exit
         ;;
