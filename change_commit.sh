@@ -49,7 +49,7 @@ which -s bfg
 if [[ $? != 0 ]] ; then
     echo "bfg is not installed so installing..."
     # Install bfg
-    brew install bfg
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install bfg
 else
     echo "bfg is installed"
 fi
