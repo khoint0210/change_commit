@@ -67,6 +67,7 @@ fi
 isError=true
 while "$isError" = "true"
 do
+    echo "==========================="
     echo "Input folder path"
     echo "Must be from root folder patch, use pwd command at the folder of project : "
     read project_path
