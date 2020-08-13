@@ -31,6 +31,7 @@ function changeCommitHistory {
                     git push -f
                 ;;
                 "n"|"no") 
+                    echo "ok you can push latter but remember to push with -f flag due to we rewrite the history 🇻🇳"
                     exit
                 ;;
             esac
